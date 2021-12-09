@@ -1,13 +1,15 @@
+using Blog.Core.Data.Repositories;
+using Blog.Core.Repositories;
+using Blog.Core.UnitOfWorks;
+using Blog.Data;
+using Blog.Data.Repositories;
+using Blog.Data.UnitOfWorks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace Blog.Web
 {
@@ -23,6 +25,22 @@ namespace Blog.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+            services.AddScoped<IArticleRepository, ArticleRepository>();
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<ICommentRepository, CommentRepository>();
+            services.AddScoped<IRoleRepository, RoleRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+            services.AddDbContext<BlogDbContext>(options =>
+            {
+                options.UseNpgsql(Configuration["ConnectionStrings:BlogDB"].ToString(), o =>
+                {
+                    o.MigrationsAssembly("Blog.Data");
+                });
+            });
+
             services.AddControllersWithViews();
         }
 
