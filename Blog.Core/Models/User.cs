@@ -1,7 +1,7 @@
-﻿using Blog.Core.Entities;
+﻿using Blog.Core.Models.Base;
 using System.Collections.Generic;
 
-namespace Blog.Domain.Models
+namespace Blog.Models
 {
     public class User : EntityBase, IEntity
     {

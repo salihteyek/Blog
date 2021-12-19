@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using Blog.Core.Entities;
+using Blog.Core.Models.Base;
 
-namespace Blog.Domain.Models
+namespace Blog.Models
 {
     public class Article : EntityBase, IEntity
     {

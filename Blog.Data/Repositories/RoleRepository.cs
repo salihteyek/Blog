@@ -1,5 +1,6 @@
 ﻿using Blog.Core.Repositories;
-using Blog.Domain.Models;
+using Blog.Data.Repositories.Base;
+using Blog.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace Blog.Data.Repositories

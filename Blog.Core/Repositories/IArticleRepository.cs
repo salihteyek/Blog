@@ -1,6 +1,7 @@
-﻿using Blog.Domain.Models;
+﻿using Blog.Core.Repositories.Base;
+using Blog.Models;
 
-namespace Blog.Core.Data.Repositories
+namespace Blog.Core.Repositories
 {
     public interface IArticleRepository : IRepository<Article>
     {

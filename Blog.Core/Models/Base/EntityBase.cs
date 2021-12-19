@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Blog.Core.Entities
+namespace Blog.Core.Models.Base
 {
     public abstract class EntityBase
     {

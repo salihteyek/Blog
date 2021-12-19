@@ -1,5 +1,5 @@
-﻿using Blog.Core.Data.Repositories;
-using Blog.Core.Entities;
+﻿using Blog.Core.Models.Base;
+using Blog.Core.Repositories.Base;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace Blog.Data.Repositories
+namespace Blog.Data.Repositories.Base
 {
     public class Repository<T> : IRepository<T> where T : class, IEntity, new()
     {
@@ -42,7 +42,7 @@ namespace Blog.Data.Repositories
             });
         }
 
-        public async Task<IEnumerable<T>> GetAllAsync(Expression<Func<T, bool>> predicate = null, params Expression<Func<T, object>>[] includeProperties)
+        public async Task<IList<T>> GetAllAsync(Expression<Func<T, bool>> predicate = null, params Expression<Func<T, object>>[] includeProperties)
         {
             IQueryable<T> query = _dbSet;
             if (predicate != null) 

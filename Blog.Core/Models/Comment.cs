@@ -1,6 +1,6 @@
-﻿using Blog.Core.Entities;
+﻿using Blog.Core.Models.Base;
 
-namespace Blog.Domain.Models
+namespace Blog.Models
 {
     public class Comment : EntityBase, IEntity
     {

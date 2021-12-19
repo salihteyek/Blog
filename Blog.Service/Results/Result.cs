@@ -1,7 +1,8 @@
 ﻿using Blog.Core.Utilities.Enums;
+using Blog.Core.Utilities.Results;
 using System;
 
-namespace Blog.Core.Utilities.Results
+namespace Blog.Service.Results
 {
     public class Result : IResult
     {

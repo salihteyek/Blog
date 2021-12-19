@@ -1,5 +1,4 @@
-﻿using Blog.Core.Data.Repositories;
-using Blog.Core.Repositories;
+﻿using Blog.Core.Repositories;
 using Blog.Core.UnitOfWorks;
 using Blog.Data.Repositories;
 using System.Threading.Tasks;

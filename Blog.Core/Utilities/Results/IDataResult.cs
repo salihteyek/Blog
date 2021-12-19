@@ -1,4 +1,4 @@
-﻿namespace Blog.Core.Utilities.Results.Abstract
+﻿namespace Blog.Core.Utilities.Results
 {
     public interface IDataResult<out T> : IResult
     {

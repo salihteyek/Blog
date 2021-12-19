@@ -1,6 +1,6 @@
 ﻿using Blog.Data.Configurations;
 using Blog.Data.Seeds;
-using Blog.Domain.Models;
+using Blog.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace Blog.Data

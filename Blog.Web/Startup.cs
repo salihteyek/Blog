@@ -1,4 +1,3 @@
-using Blog.Core.Data.Repositories;
 using Blog.Core.Repositories;
 using Blog.Core.UnitOfWorks;
 using Blog.Data;
@@ -10,6 +9,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
+using Blog.Core.Repositories.Base;
+using Blog.Data.Repositories.Base;
 
 namespace Blog.Web
 {

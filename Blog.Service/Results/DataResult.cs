@@ -1,8 +1,8 @@
 ﻿using Blog.Core.Utilities.Enums;
-using Blog.Core.Utilities.Results.Abstract;
+using Blog.Core.Utilities.Results;
 using System;
 
-namespace Blog.Core.Utilities.Results.Concrete
+namespace Blog.Service.Results
 {
     public class DataResult<T> : IDataResult<T>
     {
