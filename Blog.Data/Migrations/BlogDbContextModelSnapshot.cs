@@ -19,7 +19,7 @@ namespace Blog.Data.Migrations
                 .HasAnnotation("ProductVersion", "5.0.12")
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-            modelBuilder.Entity("Blog.Domain.Models.Article", b =>
+            modelBuilder.Entity("Blog.Models.Article", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -36,7 +36,7 @@ namespace Blog.Data.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("timestamp without time zone")
-                        .HasDefaultValue(new DateTime(2021, 12, 9, 11, 8, 29, 559, DateTimeKind.Local).AddTicks(7922));
+                        .HasDefaultValue(new DateTime(2021, 12, 21, 22, 54, 33, 379, DateTimeKind.Local).AddTicks(7750));
 
                     b.Property<string>("CreatedUser")
                         .HasMaxLength(1000)
@@ -45,7 +45,7 @@ namespace Blog.Data.Migrations
                     b.Property<DateTime>("Date")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("timestamp without time zone")
-                        .HasDefaultValue(new DateTime(2021, 12, 9, 11, 8, 29, 554, DateTimeKind.Local).AddTicks(3834));
+                        .HasDefaultValue(new DateTime(2021, 12, 21, 22, 54, 33, 374, DateTimeKind.Local).AddTicks(5493));
 
                     b.Property<string>("ImagePath")
                         .HasMaxLength(1000)
@@ -64,7 +64,7 @@ namespace Blog.Data.Migrations
                     b.Property<DateTime>("ModifiedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("timestamp without time zone")
-                        .HasDefaultValue(new DateTime(2021, 12, 9, 11, 8, 29, 559, DateTimeKind.Local).AddTicks(8124));
+                        .HasDefaultValue(new DateTime(2021, 12, 21, 22, 54, 33, 379, DateTimeKind.Local).AddTicks(8002));
 
                     b.Property<string>("ModifiedUser")
                         .HasMaxLength(1000)
@@ -87,7 +87,7 @@ namespace Blog.Data.Migrations
                     b.ToTable("Articles");
                 });
 
-            modelBuilder.Entity("Blog.Domain.Models.Category", b =>
+            modelBuilder.Entity("Blog.Models.Category", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -97,7 +97,7 @@ namespace Blog.Data.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("timestamp without time zone")
-                        .HasDefaultValue(new DateTime(2021, 12, 9, 11, 8, 29, 563, DateTimeKind.Local).AddTicks(4523));
+                        .HasDefaultValue(new DateTime(2021, 12, 21, 22, 54, 33, 383, DateTimeKind.Local).AddTicks(5576));
 
                     b.Property<string>("CreatedUser")
                         .HasMaxLength(1000)
@@ -120,7 +120,7 @@ namespace Blog.Data.Migrations
                     b.Property<DateTime>("ModifiedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("timestamp without time zone")
-                        .HasDefaultValue(new DateTime(2021, 12, 9, 11, 8, 29, 563, DateTimeKind.Local).AddTicks(4737));
+                        .HasDefaultValue(new DateTime(2021, 12, 21, 22, 54, 33, 383, DateTimeKind.Local).AddTicks(5812));
 
                     b.Property<string>("ModifiedUser")
                         .HasMaxLength(1000)
@@ -136,7 +136,7 @@ namespace Blog.Data.Migrations
                     b.ToTable("Categories");
                 });
 
-            modelBuilder.Entity("Blog.Domain.Models.Comment", b =>
+            modelBuilder.Entity("Blog.Models.Comment", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -149,7 +149,7 @@ namespace Blog.Data.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("timestamp without time zone")
-                        .HasDefaultValue(new DateTime(2021, 12, 9, 11, 8, 29, 564, DateTimeKind.Local).AddTicks(4886));
+                        .HasDefaultValue(new DateTime(2021, 12, 21, 22, 54, 33, 384, DateTimeKind.Local).AddTicks(6146));
 
                     b.Property<string>("CreatedUser")
                         .HasMaxLength(1000)
@@ -168,7 +168,7 @@ namespace Blog.Data.Migrations
                     b.Property<DateTime>("ModifiedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("timestamp without time zone")
-                        .HasDefaultValue(new DateTime(2021, 12, 9, 11, 8, 29, 564, DateTimeKind.Local).AddTicks(5094));
+                        .HasDefaultValue(new DateTime(2021, 12, 21, 22, 54, 33, 384, DateTimeKind.Local).AddTicks(6367));
 
                     b.Property<string>("ModifiedUser")
                         .HasMaxLength(1000)
@@ -186,7 +186,7 @@ namespace Blog.Data.Migrations
                     b.ToTable("Comments");
                 });
 
-            modelBuilder.Entity("Blog.Domain.Models.Role", b =>
+            modelBuilder.Entity("Blog.Models.Role", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -196,7 +196,7 @@ namespace Blog.Data.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("timestamp without time zone")
-                        .HasDefaultValue(new DateTime(2021, 12, 9, 11, 8, 29, 565, DateTimeKind.Local).AddTicks(5355));
+                        .HasDefaultValue(new DateTime(2021, 12, 21, 22, 54, 33, 385, DateTimeKind.Local).AddTicks(7275));
 
                     b.Property<string>("CreatedUser")
                         .HasMaxLength(1000)
@@ -219,7 +219,7 @@ namespace Blog.Data.Migrations
                     b.Property<DateTime>("ModifiedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("timestamp without time zone")
-                        .HasDefaultValue(new DateTime(2021, 12, 9, 11, 8, 29, 565, DateTimeKind.Local).AddTicks(5545));
+                        .HasDefaultValue(new DateTime(2021, 12, 21, 22, 54, 33, 385, DateTimeKind.Local).AddTicks(7516));
 
                     b.Property<string>("ModifiedUser")
                         .HasMaxLength(1000)
@@ -238,18 +238,18 @@ namespace Blog.Data.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2021, 12, 9, 11, 8, 29, 568, DateTimeKind.Local).AddTicks(596),
+                            CreatedDate = new DateTime(2021, 12, 21, 22, 54, 33, 387, DateTimeKind.Local).AddTicks(8933),
                             CreatedUser = "System",
                             Description = "Admin tüm yetkilere sahiptir.",
                             IsActive = true,
                             IsDeleted = false,
-                            ModifiedDate = new DateTime(2021, 12, 9, 11, 8, 29, 568, DateTimeKind.Local).AddTicks(1063),
+                            ModifiedDate = new DateTime(2021, 12, 21, 22, 54, 33, 387, DateTimeKind.Local).AddTicks(9350),
                             ModifiedUser = "System",
                             Name = "Admin"
                         });
                 });
 
-            modelBuilder.Entity("Blog.Domain.Models.User", b =>
+            modelBuilder.Entity("Blog.Models.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -259,7 +259,7 @@ namespace Blog.Data.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("timestamp without time zone")
-                        .HasDefaultValue(new DateTime(2021, 12, 9, 11, 8, 29, 567, DateTimeKind.Local).AddTicks(828));
+                        .HasDefaultValue(new DateTime(2021, 12, 21, 22, 54, 33, 387, DateTimeKind.Local).AddTicks(2963));
 
                     b.Property<string>("CreatedUser")
                         .HasMaxLength(1000)
@@ -296,7 +296,7 @@ namespace Blog.Data.Migrations
                     b.Property<DateTime>("ModifiedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("timestamp without time zone")
-                        .HasDefaultValue(new DateTime(2021, 12, 9, 11, 8, 29, 567, DateTimeKind.Local).AddTicks(1038));
+                        .HasDefaultValue(new DateTime(2021, 12, 21, 22, 54, 33, 387, DateTimeKind.Local).AddTicks(3223));
 
                     b.Property<string>("ModifiedUser")
                         .HasMaxLength(1000)
@@ -324,7 +324,7 @@ namespace Blog.Data.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2021, 12, 9, 11, 8, 29, 569, DateTimeKind.Local).AddTicks(8773),
+                            CreatedDate = new DateTime(2021, 12, 21, 22, 54, 33, 389, DateTimeKind.Local).AddTicks(973),
                             CreatedUser = "system",
                             Description = "",
                             Email = "salihteyek@hotmail.com",
@@ -332,7 +332,7 @@ namespace Blog.Data.Migrations
                             ImagePateh = "",
                             IsActive = true,
                             IsDeleted = false,
-                            ModifiedDate = new DateTime(2021, 12, 9, 11, 8, 29, 569, DateTimeKind.Local).AddTicks(8778),
+                            ModifiedDate = new DateTime(2021, 12, 21, 22, 54, 33, 389, DateTimeKind.Local).AddTicks(979),
                             ModifiedUser = "system",
                             PasswordHash = new byte[] { 101, 49, 48, 97, 100, 99, 51, 57, 52, 57, 98, 97, 53, 57, 97, 98, 98, 101, 53, 54, 101, 48, 53, 55, 102, 50, 48, 102, 56, 56, 51, 101 },
                             RoleId = 1,
@@ -340,15 +340,15 @@ namespace Blog.Data.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Blog.Domain.Models.Article", b =>
+            modelBuilder.Entity("Blog.Models.Article", b =>
                 {
-                    b.HasOne("Blog.Domain.Models.Category", "Category")
+                    b.HasOne("Blog.Models.Category", "Category")
                         .WithMany("Articles")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Blog.Domain.Models.User", "User")
+                    b.HasOne("Blog.Models.User", "User")
                         .WithMany("Articles")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -359,9 +359,9 @@ namespace Blog.Data.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Blog.Domain.Models.Comment", b =>
+            modelBuilder.Entity("Blog.Models.Comment", b =>
                 {
-                    b.HasOne("Blog.Domain.Models.Article", "Article")
+                    b.HasOne("Blog.Models.Article", "Article")
                         .WithMany("Comments")
                         .HasForeignKey("ArticleId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -370,9 +370,9 @@ namespace Blog.Data.Migrations
                     b.Navigation("Article");
                 });
 
-            modelBuilder.Entity("Blog.Domain.Models.User", b =>
+            modelBuilder.Entity("Blog.Models.User", b =>
                 {
-                    b.HasOne("Blog.Domain.Models.Role", "Role")
+                    b.HasOne("Blog.Models.Role", "Role")
                         .WithMany("Users")
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -381,22 +381,22 @@ namespace Blog.Data.Migrations
                     b.Navigation("Role");
                 });
 
-            modelBuilder.Entity("Blog.Domain.Models.Article", b =>
+            modelBuilder.Entity("Blog.Models.Article", b =>
                 {
                     b.Navigation("Comments");
                 });
 
-            modelBuilder.Entity("Blog.Domain.Models.Category", b =>
+            modelBuilder.Entity("Blog.Models.Category", b =>
                 {
                     b.Navigation("Articles");
                 });
 
-            modelBuilder.Entity("Blog.Domain.Models.Role", b =>
+            modelBuilder.Entity("Blog.Models.Role", b =>
                 {
                     b.Navigation("Users");
                 });
 
-            modelBuilder.Entity("Blog.Domain.Models.User", b =>
+            modelBuilder.Entity("Blog.Models.User", b =>
                 {
                     b.Navigation("Articles");
                 });
