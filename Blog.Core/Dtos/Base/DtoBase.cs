@@ -5,5 +5,6 @@ namespace Blog.Core.Dtos.Base
     public abstract class DtoBase
     {
         public virtual ResultStatus ResultStatus { get; set; }
+        public virtual string Message { get; set; }
     }
 }

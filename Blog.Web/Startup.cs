@@ -11,6 +11,9 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Blog.Core.Repositories.Base;
 using Blog.Data.Repositories.Base;
+using Blog.Core.Services;
+using Blog.Service.Services;
+using Blog.Service.Mapping;
 
 namespace Blog.Web
 {
@@ -32,8 +35,9 @@ namespace Blog.Web
             services.AddScoped<ICommentRepository, CommentRepository>();
             services.AddScoped<IRoleRepository, RoleRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
-            services.AddAutoMapper(typeof(Startup));
+            services.AddAutoMapper(typeof(CategoryProfile), typeof(ArticleProfile));
             
             services.AddDbContext<BlogDbContext>(options =>
             {

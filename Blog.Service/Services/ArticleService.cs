@@ -104,7 +104,8 @@ namespace Blog.Service.Services
             article.ModifiedUser = createdUser;
             article.UserId = 1;
 
-            await _unitOfWork.Articles.AddAsync(article).ContinueWith(t => _unitOfWork.CommitAsync());
+            await _unitOfWork.Articles.AddAsync(article);
+            await _unitOfWork.CommitAsync();
             return new Result(ResultStatus.Success, $"{articleAddDto.Title} başlıklı makale başarıyla eklenmiştir.");
         }
 
@@ -113,7 +114,8 @@ namespace Blog.Service.Services
             var article = _mapper.Map<Article>(articleUpdateDto);
             article.ModifiedUser = modifiedUser;
 
-            await _unitOfWork.Articles.UpdateAsync(article).ContinueWith(t => _unitOfWork.CommitAsync());
+            await _unitOfWork.Articles.UpdateAsync(article);
+            await _unitOfWork.CommitAsync();
             return new Result(ResultStatus.Success, $"{articleUpdateDto.Title} başlıklı makale başarıyla güncellenmiştir.");
         }
 
@@ -127,7 +129,8 @@ namespace Blog.Service.Services
                 article.ModifiedUser = modifiedUser;
                 article.ModifiedDate = DateTime.Now;
 
-                await _unitOfWork.Articles.UpdateAsync(article).ContinueWith(t => _unitOfWork.CommitAsync());
+                await _unitOfWork.Articles.UpdateAsync(article);
+                await _unitOfWork.CommitAsync();
                 return new Result(ResultStatus.Success, $"{article.Title} başlıklı makale başarıyla silinmiştir.");
             }
             return new Result(ResultStatus.Error, "Böyle bir makale bulunamadı.");
@@ -140,7 +143,8 @@ namespace Blog.Service.Services
             {
                 var article = await _unitOfWork.Articles.GetAsync(a => a.Id == articleId);
 
-                await _unitOfWork.Articles.DeleteAsync(article).ContinueWith(t => _unitOfWork.CommitAsync());
+                await _unitOfWork.Articles.DeleteAsync(article);
+                await _unitOfWork.CommitAsync();
                 return new Result(ResultStatus.Success, $"{article.Title} başlıklı makale başarıyla veritabanından silinmiştir.");
             }
             return new Result(ResultStatus.Error, "Böyle bir makale bulunamadı.");
