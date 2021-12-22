@@ -33,7 +33,8 @@ namespace Blog.Web
             services.AddScoped<IRoleRepository, RoleRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
-
+            services.AddAutoMapper(typeof(Startup));
+            
             services.AddDbContext<BlogDbContext>(options =>
             {
                 options.UseNpgsql(Configuration["ConnectionStrings:BlogDB"].ToString(), o =>
@@ -42,7 +43,7 @@ namespace Blog.Web
                 });
             });
 
-            services.AddControllersWithViews();
+            services.AddControllersWithViews().AddRazorRuntimeCompilation();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -68,6 +69,10 @@ namespace Blog.Web
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapAreaControllerRoute(
+                    name: "Admin",
+                    areaName: "Admin",
+                    pattern: "Admin/{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
